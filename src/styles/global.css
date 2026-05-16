@@ -1,0 +1,528 @@
+/* ============================================================================
+   ESTILOS GLOBALES - SISTEMA DE DISEÑO CAFÉ PREMIUM
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Merriweather:wght@300;400;700&family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+/* ============================================================================
+   RESET Y BASE
+   ============================================================================ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(135deg, #0d0805 0%, #1a0f0d 50%, #261614 100%);
+  color: #f5ebe6;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+  overflow-x: hidden;
+}
+
+/* ============================================================================
+   TIPOGRAFÍA SOFISTICADA
+   ============================================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #f5ebe6;
+  letter-spacing: -0.5px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+h2 {
+  font-size: 2.25rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+h3 {
+  font-size: 1.875rem;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+h4 {
+  font-size: 1.5rem;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1.125rem;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #e6ccb2;
+  line-height: 1.8;
+  animation: fadeIn 0.8s ease-out 0.3s both;
+}
+
+p strong {
+  color: #f5ebe6;
+  font-weight: 600;
+}
+
+p em {
+  color: #c9a896;
+  font-style: italic;
+}
+
+a {
+  color: #e6ccb2;
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+  transition: color 0.3s ease-smooth;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #e6ccb2, #f5ebe6);
+  transition: width 0.3s ease-smooth;
+}
+
+a:hover {
+  color: #f5ebe6;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* ============================================================================
+   COMPONENTES INTERACTIVOS
+   ============================================================================ */
+
+button {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-smooth;
+  border-radius: 16px;
+  padding: 0.875rem 1.75rem;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Botón Principal */
+.btn-primary {
+  background: linear-gradient(135deg, #e6ccb2 0%, #f5ebe6 100%);
+  color: #1a0f0d;
+  box-shadow: 0 4px 16px rgba(230, 204, 178, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(230, 204, 178, 0.5);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Botón Secundario */
+.btn-secondary {
+  background: rgba(141, 98, 83, 0.3);
+  color: #f5ebe6;
+  border: 2px solid #8c6253;
+  backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+  background: rgba(141, 98, 83, 0.5);
+  border-color: #c9a896;
+}
+
+/* Botón Terciario */
+.btn-tertiary {
+  background: transparent;
+  color: #e6ccb2;
+  border: 1px solid #8c6253;
+}
+
+.btn-tertiary:hover {
+  background: rgba(141, 98, 83, 0.1);
+  color: #f5ebe6;
+}
+
+/* Inputs y Textarea */
+input, textarea, select {
+  font-family: 'Inter', sans-serif;
+  background: rgba(26, 15, 13, 0.6);
+  border: 2px solid #8c6253;
+  border-radius: 16px;
+  color: #f5ebe6;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  transition: all 0.3s ease-smooth;
+  backdrop-filter: blur(4px);
+}
+
+input::placeholder, textarea::placeholder {
+  color: #8c6253;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: #e6ccb2;
+  background: rgba(26, 15, 13, 0.8);
+  box-shadow: 0 0 0 3px rgba(230, 204, 178, 0.1);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: 'Fira Code', monospace;
+}
+
+/* ============================================================================
+   SCROLLBAR PERSONALIZADO
+   ============================================================================ */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(26, 15, 13, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8c6253, #b58973);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #b58973, #c9a896);
+}
+
+/* ============================================================================
+   ANIMACIONES FLUIDAS
+   ============================================================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes softPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Reducir movimiento para usuarios que lo prefieren */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ============================================================================
+   COMPONENTES BASE
+   ============================================================================ */
+
+/* Card */
+.card {
+  background: rgba(26, 15, 13, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(141, 98, 83, 0.3);
+  border-radius: 24px;
+  padding: 2rem;
+  transition: all 0.3s ease-smooth;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.card:hover {
+  background: rgba(26, 15, 13, 0.6);
+  border-color: rgba(141, 98, 83, 0.5);
+  box-shadow: 0 8px 24px rgba(26, 15, 13, 0.2);
+  transform: translateY(-4px);
+}
+
+.card.elevated {
+  background: rgba(38, 22, 20, 0.6);
+  box-shadow: 0 12px 32px rgba(26, 15, 13, 0.3);
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #8c6253, #b58973);
+  color: #f5ebe6;
+  padding: 0.375rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.badge.premium {
+  background: linear-gradient(135deg, #e6ccb2, #f5ebe6);
+  color: #1a0f0d;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #8c6253, transparent);
+  margin: 2rem 0;
+}
+
+/* Skeleton Loader */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(141, 98, 83, 0.2) 0%,
+    rgba(141, 98, 83, 0.3) 50%,
+    rgba(141, 98, 83, 0.2) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 16px;
+}
+
+.skeleton.text {
+  height: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton.avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+/* ============================================================================
+   UTILIDADES DE ESPACIADO Y LAYOUT
+   ============================================================================ */
+
+.grid-auto-fit {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================================================
+   EFECTOS DE MICROINTERACCIONES
+   ============================================================================ */
+
+.pulse-soft {
+  animation: softPulse 2s ease-in-out infinite;
+}
+
+.shimmer-effect {
+  background: linear-gradient(
+    90deg,
+    rgba(141, 98, 83, 0.1) 0%,
+    rgba(230, 204, 178, 0.3) 50%,
+    rgba(141, 98, 83, 0.1) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.glow-hover {
+  transition: all 0.3s ease-smooth;
+}
+
+.glow-hover:hover {
+  filter: drop-shadow(0 0 16px rgba(230, 204, 178, 0.4));
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+@media (max-width: 1024px) {
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.875rem; }
+  h3 { font-size: 1.5rem; }
+  
+  .grid-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 0.9375rem;
+  }
+
+  h1 { font-size: 1.875rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  
+  button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9375rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .grid-auto-fit {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* ============================================================================
+   ACCESIBILIDAD
+   ============================================================================ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #e6ccb2;
+  outline-offset: 2px;
+}
+
+/* ============================================================================
+   UTILITY CLASSES
+   ============================================================================ */
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section.small {
+  padding: 2rem 0;
+}
+
+.section.large {
+  padding: 6rem 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.opacity-light { opacity: 0.3; }
+.opacity-medium { opacity: 0.5; }
+.opacity-strong { opacity: 0.7; }
